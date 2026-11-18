@@ -1,0 +1,24 @@
+# sbc-pro tier map
+
+Tier 1 — SoC / boot / firmware (BCM2712 VideoCore first, RP1 southbridge)
+  VideoCore boots → ARM kernel → drivers
+      |                      |
+      v                      v
+  mailbox RPC (closed blob)   kernel + device tree
+
+Tier 2 — GPU stack (name it before diagnosing)
+  Mesa V3D/V3DV (Pi 4/5)  |  Panfrost/PanVK (RK3588)  |  vendor blob (RK3588)
+      |                              |                              |
+      v                              v                              v
+  GLES 3.1 + Vulkan            GLES 3.1 + Vulkan 1.2      GLES 3.2 + OpenCL 2.2 + Vulkan 1.1
+
+Tier 3 — IO / peripherals (Pi 5 behind RP1 over PCIe)
+  GPIO  I2C  SPI  PWM  PCIe
+      |   |    |    |    |
+      +---+----+----+----+----+
+              |
+              v
+        thermal_watch.sh (1 Hz throttle sampling)
+
+Tier 4 — thermal / power (precedes performance)
+  vcgencmd get_throttled  →  thermal zones  →  supply rating

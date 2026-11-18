@@ -1,0 +1,16 @@
+Tier 1 — ESP32-S3 (hard real-time)
+  esp_timer one-shots  |  IRAM_ATTR ISRs  |  LEDC 20 kHz  |  AS7341 I²C
+      |                      |                      |
+      v                      v                      v
+  sync GPIO edge capture   shutter AC drive       spectral readout
+      |                      |                      |
+      +---------- serial W:<int>,WARM:<0-255>,COLD:<0-255>,UV:<0-255> ----------+
+
+Tier 2 — Raspberry Pi (gradients + networking)
+  serial_bridge.py  |  Hue Entertainment DTLS UDP :2100 (~25–50 Hz macro-bias)
+      |                              |
+      v                              v
+  host gradients                  macro-bias only (not frame-synced)
+
+Tier 3 — phone (rendering only)
+  nothing latency-critical here

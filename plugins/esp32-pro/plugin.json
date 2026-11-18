@@ -1,0 +1,11 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "esp32-pro",
+  "version": "0.1.0",
+  "description": "ESP32 / ESP32-S3 embedded firmware, C99, embedded Rust, RISC-V/XTENSA assembly, zero-DC shutter drive",
+  "agents": ["claude-code", "codex", "gemini-cli", "cursor", "generic"],
+  "runtime": "st",
+  "subcommand": "plugin",
+  "registry": "https://g8t.is/registry/index.json",
+  "license": "MIT"
+}

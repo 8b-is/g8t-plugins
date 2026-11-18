@@ -1,0 +1,29 @@
+{
+  "$schema": "https://g8t.is/schemas/g8t-index/0.1.0.json",
+  "title": "g8t Registry Index Schema",
+  "type": "object",
+  "required": ["spec", "generated", "root", "plugins"],
+  "properties": {
+    "spec": { "type": "string" },
+    "generated": { "type": "string" },
+    "registry": { "type": "string" },
+    "root": { "type": "string" },
+    "plugins": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "version", "blake3"],
+        "properties": {
+          "name": { "type": "string" },
+          "version": { "type": "string" },
+          "blake3": { "type": "string" },
+          "size": { "type": "integer" },
+          "deps": { "type": "array", "items": { "type": "string" } },
+          "ledgerHash": { "type": "string" },
+          "minisig": { "type": "string" },
+          "cosign": { "type": "string" }
+        }
+      }
+    }
+  }
+}

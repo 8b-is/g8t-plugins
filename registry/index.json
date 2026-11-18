@@ -1,0 +1,39 @@
+{
+  "$schema": "https://g8t.is/schemas/g8t-index/0.1.0.json",
+  "spec": "g8t-index/0.1.0",
+  "generated": "2026-11-18T00:00:00Z",
+  "registry": "https://g8t.is/registry/index.json",
+  "root": "b3:UNVERIFIED",
+  "plugins": [
+    {
+      "name": "esp32-pro",
+      "version": "0.1.0",
+      "blake3": "b3:UNVERIFIED",
+      "size": 0,
+      "deps": [],
+      "ledgerHash": "b3:UNVERIFIED",
+      "minisig": "ed25519:UNVERIFIED",
+      "cosign": "sigstore:UNVERIFIED"
+    },
+    {
+      "name": "sbc-pro",
+      "version": "0.1.0",
+      "blake3": "b3:UNVERIFIED",
+      "size": 0,
+      "deps": [],
+      "ledgerHash": "b3:UNVERIFIED",
+      "minisig": "ed25519:UNVERIFIED",
+      "cosign": "sigstore:UNVERIFIED"
+    },
+    {
+      "name": "arm-master",
+      "version": "0.1.0",
+      "blake3": "b3:UNVERIFIED",
+      "size": 0,
+      "deps": [],
+      "ledgerHash": "b3:UNVERIFIED",
+      "minisig": "ed25519:ed25519:UNVERIFIED",
+      "cosign": "sigstore:UNVERIFIED"
+    }
+  ]
+}

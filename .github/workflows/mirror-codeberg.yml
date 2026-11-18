@@ -1,0 +1,38 @@
+name: Mirror metadata to Codeberg (Mode A)
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '30 */4 * * *'
+  workflow_dispatch:
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - name: Run Codeberg gate
+        run: python ci/codeberg_gate.py
+
+  mirror:
+    needs: gate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - name: Install minisign (optional, for signature checks)
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq minisign
+      - name: Push metadata subtree to Codeberg
+        env:
+          CODEBERG_MIRROR_SSH: ${{ secrets.CODEBERG_MIRROR_SSH }}
+        run: |
+          install -m700 -d ~/.ssh
+          printf '%s' "$CODEBERG_MIRROR_SSH" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan codeberg.org >> ~/.ssh/known_hosts
+          git remote add codeberg git@codeberg.org:8b-is/g8t-plugins.git
+          git subtree push --prefix=schemas codeberg main
+          git subtree push --prefix=cli codeberg main
+          git subtree push --prefix=ci codeberg main
+          git subtree push --prefix=registry codeberg main

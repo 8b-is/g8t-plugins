@@ -1,0 +1,38 @@
+{
+  "$schema": "https://g8t.is/schemas/g8t-plugin/0.2.0.json",
+  "name": "esp32-pro",
+  "version": "0.1.0",
+  "agentPlugins": "1.0.0",
+  "st": {
+    "minSt": "23.0.0",
+    "subcommand": "plugin",
+    "m8Sections": ["PLUG", "EPIS", "HOOK", "MCPX", "PROV"],
+    "mcpTool": "plugin"
+  },
+  "security": {
+    "requiresScan": true,
+    "foreignPatternsVersion": "6.5.2",
+    "gate": "st plugin add --verify"
+  },
+  "provenance": {
+    "humanReviewed": true,
+    "llmAssisted": true,
+    "reviewer": "8b-is/reviewers",
+    "reviewCommit": "UNVERIFIED",
+    "notes": "SKILL.md prose is LLM-assisted; every epistemic claim is classified [VALID]/[PROTOTYPE]/[FICTION] in references/epistemic-ledger.md"
+  },
+  "epistemic": {
+    "ledger": "references/epistemic-ledger.md",
+    "claims": { "valid": 0, "prototype": 0, "fiction": 0 }
+  },
+  "compatibility": {
+    "clients": ["claude-code", "codex", "gemini-cli", "cursor", "generic"],
+    "minG8t": "0.3.0"
+  },
+  "mirrors": {
+    "github": "https://github.com/8b-is/g8t-plugins",
+    "codeberg": "https://codeberg.org/8b-is/g8t-plugins (metadata only)",
+    "forgejo": "https://v13.next.forgejo.org/8b-is/g8t-plugins (full mirror)"
+  },
+  "license": "MIT"
+}

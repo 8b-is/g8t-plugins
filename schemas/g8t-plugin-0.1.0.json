@@ -1,0 +1,55 @@
+{
+  "$schema": "https://g8t.is/schemas/g8t-plugin-0.1.0.json",
+  "title": "g8t Plugin Manifest Schema",
+  "type": "object",
+  "required": ["$schema", "name", "version", "agentPlugins"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "name": { "type": "string" },
+    "version": { "type": "string" },
+    "agentPlugins": { "type": "string" },
+    "st": {
+      "type": "object",
+      "properties": {
+        "minSt": { "type": "string" },
+        "subcommand": { "type": "string" },
+        "m8Sections": { "type": "array", "items": { "type": "string" } },
+        "mcpTool": { "type": "string" }
+      }
+    },
+    "security": {
+      "type": "object",
+      "properties": {
+        "requiresScan": { "type": "boolean" },
+        "foreignPatternsVersion": { "type": "string" },
+        "gate": { "type": "string" }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "properties": {
+        "humanReviewed": { "type": "boolean" },
+        "llmAssisted": { "type": "boolean" },
+        "reviewer": { "type": "string" },
+        "reviewCommit": { "type": "string" }
+      }
+    },
+    "epistemic": {
+      "type": "object",
+      "properties": {
+        "ledger": { "type": "string" },
+        "claims": {
+          "type": "object",
+          "properties": {
+            "valid": { "type": "integer" },
+            "prototype": { "type": "integer" },
+            "fiction": { "type": "integer" }
+          }
+        }
+      }
+    },
+    "mirrors": { "type": "object" },
+    "license": { "type": "string" },
+    "codebergPolicy": { "type": "string" }
+  }
+}

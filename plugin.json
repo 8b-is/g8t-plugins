@@ -1,0 +1,12 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "g8t-plugins",
+  "version": "0.1.0",
+  "description": "Sovereign, agent-agnostic plugin registry for 8b-is skills. Installs via st plugin (Smart Tree) or directly into ~/.agents/skills/. Contains esp32-pro, sbc-pro, and arm-master.",
+  "agents": ["claude-code", "codex", "gemini-cli", "cursor", "generic"],
+  "runtime": "st",
+  "subcommand": "plugin",
+  "registry": "https://g8t.is/registry/index.json",
+  "mirrors": ["github", "codeberg-metadata", "forgejo"],
+  "license": "MIT"
+}

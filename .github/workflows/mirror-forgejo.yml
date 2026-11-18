@@ -1,0 +1,20 @@
+name: Mirror full repo to Forgejo (sovereign)
+on:
+  push:
+    tags: ['v*']
+  schedule:
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - name: Push full mirror to Forgejo
+        env:
+          FORGEJO_URL: ${{ secrets.FORGEJO_URL }}
+        run: |
+          git remote add forgejo "${FORGEJO_URL}/8b-is/g8t-plugins.git"
+          git push forgejo --mirror
