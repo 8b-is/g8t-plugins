@@ -1,0 +1,11 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "assembly-pro",
+  "version": "0.1.0",
+  "description": "Multi-ISA assembly and low-level performance engineering for x86-64 and RISC-V",
+  "agents": ["claude-code", "codex", "gemini-cli", "cursor", "generic"],
+  "runtime": "st",
+  "subcommand": "plugin",
+  "registry": "https://g8t.is/registry/index.json",
+  "license": "MIT"
+}

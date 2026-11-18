@@ -32,7 +32,27 @@
       "size": 0,
       "deps": [],
       "ledgerHash": "b3:UNVERIFIED",
-      "minisig": "ed25519:ed25519:UNVERIFIED",
+      "minisig": "ed25519:UNVERIFIED",
+      "cosign": "sigstore:UNVERIFIED"
+    },
+    {
+      "name": "assembly-pro",
+      "version": "0.1.0",
+      "blake3": "b3:UNVERIFIED",
+      "size": 0,
+      "deps": [],
+      "ledgerHash": "b3:UNVERIFIED",
+      "minisig": "ed25519:UNVERIFIED",
+      "cosign": "sigstore:UNVERIFIED"
+    },
+    {
+      "name": "retro-game-dev",
+      "version": "0.1.0",
+      "blake3": "b3:UNVERIFIED",
+      "size": 0,
+      "deps": [],
+      "ledgerHash": "b3:UNVERIFIED",
+      "minisig": "ed25519:UNVERIFIED",
       "cosign": "sigstore:UNVERIFIED"
     }
   ]

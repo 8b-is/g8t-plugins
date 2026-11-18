@@ -1,7 +1,7 @@
 {
   "$schema": "https://g8t.is/schemas/g8t-plugin/0.2.0.json",
   "name": "g8t-plugins",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "agentPlugins": "1.0.0",
   "st": {
     "minSt": "23.0.0",
@@ -20,7 +20,7 @@
     "llmAssisted": true,
     "reviewer": "8b-is/reviewers",
     "reviewCommit": "UNVERIFIED",
-    "notes": "All SKILL.md prose is LLM-assisted; every epistemic claim is classified [VALID]/[PROTOTYPE]/[FICTION] in references/epistemic-ledger.md"
+    "notes": "All SKILL.md prose is LLM-assisted; every epistemic claim is classified [VALID]/[PROTOTYPE]/[FICTION] in per-plugin references/epistemic-ledger.md"
   },
   "epistemic": {
     "ledger": "references/epistemic-ledger.md",
@@ -33,5 +33,12 @@
     "forgejo": "https://v13.next.forgejo.org/8b-is/g8t-plugins (full mirror)"
   },
   "license": "MIT",
-  "codebergPolicy": "Mode A — metadata mirror only. No plugins/*/SKILL.md pushed to Codeberg per Codeberg ToU §2(1)7 (LLM-generated code restriction). Full sovereign copy lives on Forgejo."
+  "codebergPolicy": "Mode A — metadata mirror only. No plugins/*/SKILL.md pushed to Codeberg per Codeberg ToU §2(1)7 (LLM-generated code restriction). Full sovereign copy lives on Forgejo.",
+  "plugins": [
+    "esp32-pro",
+    "sbc-pro",
+    "arm-master",
+    "assembly-pro",
+    "retro-game-dev"
+  ]
 }
